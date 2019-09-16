@@ -105,6 +105,11 @@
       <artifactId>spring-boot-context</artifactId>
       <version>LATEST</version>
     </dependency>
+
+    <dependency>
+      <groupId></groupId>
+      <artifactId></artifactId>
+    </dependency>
   </dependencies>
 
   <build>
