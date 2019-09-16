@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>URL</title>
+</head>
+<body>
+    <h2>绝对路径  </h2><br>
+    <a th:href="@{http://www.baidu.com}">百度</a><br>
+    <a href="http://www.baidu.com">百度2</a>
+
+    <hr/>
+    <h2>相对路径   以当前项目为根路径</h2><br>
+    <a th:href="@{/thy02}">可以跳转到当前项目</a><br>
+    <h2>以tomcat的项目存放目录为根目录</h2><br>
+    <a th:href="@{~/springdemo01}">可以跳转到同一tomcat下的其它项目</a><br>
+    <br>
+    <h2>传参</h2>
+    <a th:href="@{/thy02(s = 'ni好啊',name = 'test',i = 100)}">chuan参</a>
+</body>
+</html>

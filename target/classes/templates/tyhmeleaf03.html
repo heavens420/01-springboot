@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+    <h2>获取作用域的值</h2><hr/>
+    Request:<span th:text="${#httpServletRequest.getAttribute('request')}"></span><br>
+    Session:<span th:text="${#httpSession.getAttribute('session')}"></span><br>
+    Session2:<span th:text="${session.session}"></span><br>
+    Application:<span th:text="${#httpServletRequest.getServletContext().getAttribute('application')}"></span><br>
+    Application2:<span th:text="${application.application}"></span><br>
+</body>
+</html>

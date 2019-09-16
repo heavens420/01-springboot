@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>One User 信息</title>
+</head>
+<body>
+<table border="1px" align="center" width="50%">
+    <h2>一个用户不用遍历  遍历也行</h2>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </tr>
+    <tr >
+        <td align="center" th:text="${user.id}"></td>
+        <td align="center" th:text="${user.name}"></td>
+        <td align="center" th:text="${user.age}"></td>
+        <td >
+            <a th:href="@{/user/searchById(id=${user.id})}">修改</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

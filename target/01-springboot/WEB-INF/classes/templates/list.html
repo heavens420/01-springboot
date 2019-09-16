@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+</head>
+<body>
+    <table border="1px" align="center" width="50%">
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th colspan="3">操作</th>
+        </tr>
+        <tr th:each=" user :${list}">
+            <td align="center" th:text="${user.id}"></td>
+            <td align="center" th:text="${user.name}"></td>
+            <td align="center" th:text="${user.age}"></td>
+            <td align="center">
+                <a  th:href="@{/user/searchById(id=${user.id})}">修改</a>
+            </td>
+            <td align="center">
+                <a th:href="@{/user/deleteById(id=${user.id})}">删除</a>
+            </td>
+            <td align="center">
+                <a th:href="@{/user/input}">添加</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

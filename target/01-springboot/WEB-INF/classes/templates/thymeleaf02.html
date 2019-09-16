@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User表</title>
+</head>
+<body>
+    <table border="1px" width="70%" align="center" >
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>Index</th>
+            <th>Count</th>
+            <th>Current</th>
+            <th>Even</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Odd</th>
+            <th>Size</th>
+        </tr>
+        <tr th:each="user,var:${userlist}">
+            <td align="center" th:text="${user.id}"></td>
+            <td align="center" th:text="${user.name}"></td>
+            <td align="center" th:text="${user.age}"></td>
+            <td align="center" th:text="${var.index}"></td>
+            <td align="center" th:text="${var.count}"></td>
+            <td align="center" th:text="${var.current}"></td>
+            <td align="center" th:text="${var.even}"></td>
+            <td align="center" th:text="${var.first}"></td>
+            <td align="center" th:text="${var.last}"></td>
+            <td align="center" th:text="${var.odd}"></td>
+            <td align="center" th:text="${var.size}"></td>
+        </tr>
+    </table>
+
+    <table border="1px" align="center" width="70%">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="maps : ${map}">
+            <td th:each="m : ${maps}" th:text="${m.value.id}"></td>
+            <td th:each="m : ${maps}" th:text="${m.value.name}"></td>
+            <td th:each="m : ${maps}" th:text="${m.value.age}"></td>
+        </tr>
+    </table>
+</body>
+</html>

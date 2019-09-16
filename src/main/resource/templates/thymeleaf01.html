@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span th:text="简单内置函数测试"></span>
+    <hr/>
+    <div th:text="${msg}"></div> <br>
+    <input type = text name="hhh" th:value="${msg}"><br>
+    <div th:text="${#strings.isEmpty(msg)}"></div> <br>
+    <div th:text="${#strings.contains(msg,'是')}"></div> <br>
+    <span th:text="${#strings.startsWith(msg,'这')}"></span>
+    <span th:text="${#strings.endsWith(msg,'你')}"></span><br>
+    <span th:text="${#strings.length(msg)}"></span><br>
+    <span th:text="${#strings.indexOf(msg,'一')}"></span><br>
+    <span th:text="${#strings.substring(msg,1,5)}"></span><br>
+    <span th:text="${#strings.substring(msg,5)}"></span><br>
+    <span th:text="${#strings.toUpperCase(msg)}"></span><br>
+    <span th:text="${#strings.toLowerCase(msg)}"></span><br>
+    <span th:text="${#dates.format(date)}"></span><br>
+    <span th:text="${#dates.format(date,'yyyy-MM-dd hh:mm:ss')}"></span><br>
+    <span th:text="${#dates.year(date)}"></span><br>
+    <span th:text="${#dates.month(date)}"></span><br>
+    <span th:text="${#dates.day(date)}"></span><br>
+    <hr/>
+
+    <span th:text="条件判断"></span><br>
+    <span th:if="${sex} == '男'">
+        性别 : 男
+    </span>
+    <span th:if="${sex} == '女'">
+        性别 : 女
+    </span>
+
+    <hr/>
+    <span th:text="选择语句"></span><br>
+    <div th:switch="${id}">
+        <span th:case="1">
+            结果为 1
+        </span>
+        <span th:case="2">
+            结果为 2
+        </span>
+    </div>
+</body>
+</html>

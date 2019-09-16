@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+</head>
+<body>
+    <form th:action="@{/user/query}">
+        <input type="submit" value="SearchAll">
+    </form>
+    <form th:action="@{/user/addUser}" method="post">
+        姓名:<input type="text" name="name"><font color="red" th:errors="${user.name}"></font><br>
+        年龄:<input type="text" name="age"><span style="color: red "  th:onerror="${user.age}"></span><br>
+        密码:<input type="text" name="password"><span style="color: red " th:onerror="${user.password}"></span><br>
+        <input type="submit" value="提交"><br>
+    </form>
+    <form th:action="@{/user/searchById}" method="post">
+        <input type="text" name="id">
+        <input type="submit" value="SearchById" >
+    </form>
+    <form th:action="@{/user/deleteById}" method="post">
+        <input type="text" name="id">
+        <input type="submit" value="删除(ById)">
+    </form>
+</body>
+</html>
